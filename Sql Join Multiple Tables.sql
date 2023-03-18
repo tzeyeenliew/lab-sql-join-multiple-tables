@@ -65,16 +65,6 @@ ORDER BY average_length DESC;
  LIMIT 5;
  
  
-SELECT F.title, count(R.rental_id) as 'num_rentals'
-FROM film as F
-LEFT JOIN inventory as I
-ON F.film_id=I.film_id
-LEFT JOIN rental as R
-ON R.inventory_id=I.inventory_id
-group by F.title
-order by num_rentals desc;
-
- 
 SELECT F.title, COUNT(R.rental_id) AS rental_count
 FROM rental AS R
 JOIN inventory AS I 
