@@ -30,6 +30,8 @@ HAVING num_cards = 0;
 
 ### 2.Write a query to display how much business, in dollars, each store brought in.
 
+#### Query formatted to display currency
+
 SELECT A.store_id, CONCAT('$', SUM( B.amount)) AS total_amount
 FROM staff as A
 INNER JOIN  payment as B
@@ -49,6 +51,8 @@ GROUP BY B.category_id;
 
 
 ### 4.Which film categories are longest?
+
+###Query formatted to display average length in hours, minutes and seconds
 
 SELECT B.category_id,C.name, SEC_TO_TIME(AVG(length*60)) as average_length
 FROM film as A
@@ -103,7 +107,7 @@ ORDER by COUNT(rental_money) DESC;
 
 ### 7.Is "Academy Dinosaur" available for rent from Store 1?
 
-### Yes, it 4 copies are available for rent in store 1!
+### Yes, there are 4 copies are available for rent in store 1!
 
 SELECT A.store_id,  B.title
 FROM store as A
